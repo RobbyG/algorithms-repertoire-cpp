@@ -1,0 +1,15 @@
+# Build directory
+build/
+
+# CMake intermediate files (if ever generated in root)
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# VS Code
+.vscode/
+
+# Other editor/OS junk
+*.log
+.DS_Store
