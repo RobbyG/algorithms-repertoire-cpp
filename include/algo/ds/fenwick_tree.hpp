@@ -17,17 +17,18 @@ namespace algo::ds
 
         explicit FenwickTree(const std::vector<T>& a) : FenwickTree(a.size())
         {
-            std::vector<T> tree =
-                for (std::size_t i = 0; i < a.size(); ++i)
+            for (std::size_t i = 0; i < a.size(); ++i)
+            {
+                std::size_t idx = i + 1;
+                T value = a[i];
+                while (idx <= n)
                 {
-                    std::size_t idx = i + 1;
-                    T value = a[i];
-                    while (idx <= n) {
-                        tree[idx] += value;
-                        idx += idx & -idx;
-                    }
+                    tree[idx] += value;
+                    idx += idx & -idx;
                 }
+            }
         }
+
 
         // add value 'delta' at index 'idx' (0-based)
         void add(std::size_t idx, T delta)
